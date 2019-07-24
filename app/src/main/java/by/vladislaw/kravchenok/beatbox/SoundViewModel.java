@@ -1,18 +1,14 @@
 package by.vladislaw.kravchenok.beatbox;
 
-import android.nfc.Tag;
-import android.util.Log;
-import android.view.View;
-
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-import androidx.databinding.Observable;
 import androidx.databinding.library.baseAdapters.BR;
+
 
 /**
  * Created by Vladislaw Kravchenok on 17.07.2019.
  */
-public class SoundViewModel extends BaseObservable implements View.OnClickListener {
+public class SoundViewModel extends BaseObservable {
     private static final String TAG = "SoundViewModel";
 
     private Sound mSound;
@@ -37,9 +33,9 @@ public class SoundViewModel extends BaseObservable implements View.OnClickListen
         notifyPropertyChanged(BR.title);
     }
 
-    @Override
-    public void onClick(View view){
-        Log.d(TAG, mSound.getName());
+    public void onButtonClick() {
+        mBeatBox.play(mSound);
     }
+
 
 }
