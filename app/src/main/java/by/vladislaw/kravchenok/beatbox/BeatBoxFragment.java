@@ -42,7 +42,7 @@ public class BeatBoxFragment extends Fragment {
         final FragmentBeatBoxBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_beat_box, container, false);
         binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         binding.recyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
-        binding.setViewModel(new RateViewModel(mBeatBox,getActivity()));
+        binding.setViewModel(new RateViewModel(mBeatBox, getActivity()));
         binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -78,7 +78,7 @@ public class BeatBoxFragment extends Fragment {
             mBinding.setViewModel(new SoundViewModel(mBeatBox));
         }
 
-        public void bind(Sound sound){
+        public void bind(Sound sound) {
             mBinding.getViewModel().setSound(sound);
             mBinding.executePendingBindings();
         }
